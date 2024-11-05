@@ -1,0 +1,224 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('imagenes/fondo_nuevooo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten en varias líneas */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    display: flex;
+    align-items: center;
+}
+
+.edusize {
+    font-size: 30px;
+    color: #093657;
+}
+
+.controlsize {
+    font-size: 24px;
+    color: #10a5cd;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los enlaces se ajusten */
+    margin-left: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    /* Ajusta el margen para que se vea mejor en móviles */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #1a73e8;
+}
+
+.titulof {
+    font-size: 25px;
+    text-align: center;
+    /* Centra el título */
+    margin: 20px 0;
+    margin-top: 100px;
+    /* Margen arriba y abajo */
+}
+
+.inciosesion-contenedor {
+    margin: 0 auto;
+    /* Centra el contenedor */
+    width: 90%;
+    /* Ancho responsivo */
+    max-width: 600px;
+    /* Máximo ancho en pantallas grandes */
+    margin-top: 10px;
+}
+
+.correo,
+.contrasena {
+    margin-top: 30px;
+}
+
+.correo h3,
+.contrasena h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.inciosesion-contenedor input[type="email"],
+.inciosesion-contenedor input[type="password"] {
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    /* Añade un borde ligero para los campos de entrada */
+}
+
+.olvidastecontra {
+    margin-top: 20px;
+    color: gray;
+    text-align: center;
+    /* Centra el texto */
+}
+
+.boton-ingresar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton-ingresar .login-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 60%;
+    background-color: #10a5cd;
+    color: white;
+    border-radius: 25px;
+    /* Ajusta la ovalidad */
+    border: none;
+}
+
+.boton-ingresar .login-button:hover {
+    background-color: #0d8eb3;
+    border: 1px solid #093657;
+    /* Color del borde al pasar el ratón */
+}
+
+.register-link,
+.forgot-password {
+    text-decoration: none;
+    color: gray;
+}
+
+.forgot-password:hover,
+.register-link:hover {
+    text-decoration: underline;
+    /* Subrayado al pasar el ratón */
+    color: #666;
+}
+
+.no-cuenta {
+    margin-top: 300px;
+    /* Reduce el margen para móviles */
+    font-size: 18px;
+    text-align: center;
+    /* Centra el texto */
+}
+
+
+/* Media Queries para dispositivos móviles */
+
+@media (max-width: 768px) {
+    body {
+        background-image: none;
+        /* Elimina el fondo en dispositivos móviles */
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .titulof,
+    .inciosesion-contenedor,
+    .no-cuenta {
+        margin: 10px 0;
+        /* Espaciado vertical reducido */
+        width: 100%;
+        /* Asegura que ocupen todo el ancho */
+    }
+    .inciosesion-contenedor input[type="email"],
+    .inciosesion-contenedor input[type="password"] {
+        font-size: 18px;
+        width: 80%;
+        margin-left: 60px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        /* Añade un borde ligero para los campos de entrada */
+    }
+    .correo,
+    .contrasena {
+        margin: 10px 0;
+        /* Reduce el margen */
+    }
+    .correo h3,
+    .contrasena h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-left: 55px;
+    }
+    nav {
+        margin: 10px 0;
+        /* Espaciado entre elementos del menú */
+    }
+    nav a {
+        margin: 0 5px;
+        /* Ajusta el margen de los enlaces */
+        font-size: 16px;
+        /* Reduce el tamaño de fuente en móviles */
+    }
+    .no-cuenta {
+        margin-top: 40px;
+        /* Reduce el margen para móviles */
+        font-size: 18px;
+        text-align: center;
+        /* Centra el texto */
+    }
+}
