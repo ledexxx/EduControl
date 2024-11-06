@@ -78,6 +78,8 @@ main {
 
 main h2 {
     font-size: 32px;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 40px;
     margin-top: 60px;
     margin-right: 410px;
