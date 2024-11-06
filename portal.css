@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -46,11 +47,14 @@ header {
 .edusize {
     font-size: 30px;
     color: #093657;
+    font-weight: 700;
 }
 
 .controlsize {
     font-size: 24px;
     color: #10a5cd;
+    font-weight: 600;
+
 }
 
 nav {
