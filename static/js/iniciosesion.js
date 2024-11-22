@@ -1,19 +1,21 @@
-function iniciarSesion() {
+async function iniciarSesion() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    fetch('/auth/login', {
+    const response = await fetch("/auth/login", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.mensaje);
-    })
-    .catch(error => {
-        console.error('Error:', error);
+        body: JSON.stringify({ email, contraseña: password })
     });
+
+    const result = await response.json();
+
+    if (response.ok) {
+        // Redirigir a la ruta proporcionada por el servidor
+        window.location.href = result.redireccion;
+    } else {
+        alert(result.mensaje || 'Error desconocido');
+    }
 }

@@ -51,27 +51,28 @@
     </div>
     
     <script>
-        async function iniciarSesion() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-    
-            const response = await fetch("/auth/login", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, contraseña: password })
-            });
-    
-            const result = await response.json();
-    
-            if (response.ok) {
-                alert("Inicio de sesión exitoso: " + result.usuario); // Redirigir o mostrar mensaje
-                window.location.href = "{{ url_for('index') }}";
-            } else {
-                alert(result.mensaje || 'Error desconocido');
-            }
-        }
+       async function iniciarSesion() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const response = await fetch("/auth/login", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, contraseña: password })
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+        // Redirigir a la ruta proporcionada por el servidor
+        window.location.href = result.redireccion;
+    } else {
+        alert(result.mensaje || 'Error desconocido');
+    }
+}
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/iniciosesion.js') }}"></script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/educontrol.svg') }}" alt="Logo EduControl">
+            <h1>EduControl</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('qr') }}">Código QR</a>
+        </nav>
+    </header>
+    <div class="dashboard-container">
+        <h2>Bienvenido, Estudiante</h2>
+        <div class="card">
+            <h3>Código QR</h3>
+            <img src="{{ url_for('static', filename='images/qr_placeholder.png') }}" alt="Código QR">
+        </div>
+        <div class="card">
+            <h3>Porcentaje de Asistencia</h3>
+            <p>85%</p>
+        </div>
+        <div class="card">
+            <h3>Asistencias Justificadas</h3>
+            <p>0</p>
+        </div>
+    </div>
+</body>
+</html>
