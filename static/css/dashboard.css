@@ -22,9 +22,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #093657;
-    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000000;
 }
 
 .logo img {

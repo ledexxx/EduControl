@@ -9,19 +9,24 @@
 <body>
     <header>
         <div class="logo">
-            <img src="{{ url_for('static', filename='images/educontrol.svg') }}" alt="Logo EduControl">
-            <h1>EduControl</h1>
+            <!-- Logotipo -->
+            <img src="{{ url_for('static', filename='images/educontrol.svg') }}" alt="Logo de EduControl">
+            <h1>
+                <span class="edusize">Edu</span>
+                <span class="controlsize">Control</span>
+            </h1>
         </div>
         <nav>
-            <a href="{{ url_for('index') }}">Inicio</a>
-            <a href="{{ url_for('qr') }}">Código QR</a>
+            <!-- Navegación entre páginas -->
+            <a style="color: #01548f;" href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('login') }}">Portal</a>
         </nav>
     </header>
     <div class="dashboard-container">
         <h2>Bienvenido, Estudiante</h2>
         <div class="card">
             <h3>Código QR</h3>
-            <img src="{{ url_for('static', filename='images/qr_placeholder.png') }}" alt="Código QR">
+            <img src="{{ url_for('static', filename='images/qr_placeholder.svg') }}" alt="Código QR">
         </div>
         <div class="card">
             <h3>Porcentaje de Asistencia</h3>
