@@ -1,0 +1,145 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('imagenes/fondo_nuevooo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.edusize {
+    font-size: 30px;
+    color: #093657;
+    font-weight: 700;
+}
+
+.controlsize {
+    font-size: 24px;
+    color: #10a5cd;
+    font-weight: 600;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #1a73e8;
+}
+
+.titulof {
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0;
+    margin-top: 100px;
+}
+
+.inciosesion-contenedor {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+form h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+form input,
+form select {
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.contrasena,
+.confirmar-contrasena {
+    margin-top: 20px;
+}
+
+.boton-ingresar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 60%;
+    background-color: #10a5cd;
+    color: white;
+    border-radius: 25px;
+    border: none;
+}
+
+.login-button:hover {
+    background-color: #0d8eb3;
+    border: 1px solid #093657;
+}
+
+.no-cuenta {
+    margin-top: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    body {
+        background-image: none;
+    }
+    .inciosesion-contenedor {
+        width: 100%;
+    }
+    form input,
+    form select {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+    nav a {
+        font-size: 16px;
+    }
+    .no-cuenta {
+        margin-top: 20px;
+    }
+}

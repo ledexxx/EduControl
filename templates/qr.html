@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduControl-QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/qr.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/educontrol.svg') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/educontrol.svg') }}" alt="Logo EduControl">
+            <h1>
+                <span class="edusize">Edu</span>
+                <span class="controlsize">Control</span>
+            </h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('login') }}">Portal</a>
+            <a style="color: #01548f;" href="{{ url_for('qr') }}">Código QR</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2><span style="color: #10a5cd;">Escanea el </span><strong style="color: #093657;">Código QR</strong></h2>
+        <div class="content">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/qr_code.svg') }}" alt="Código QR">
+                <p><strong style="color: #10a5cd;">Con tu celular</strong> escanea el código QR con la cámara</p>
+            </div>
+            <div>
+                <label for="inputPassword5" class="form-label" style="color: #10a5cd;" minlength="5" maxlength="6" required>Código alumno</label>
+                <input type="password" id="codigoAlumno" class="form-control" aria-describedby="passwordHelpBlock">
+                <div id="passwordHelpBlock" class="form-text">
+                    Tu código debe tener 5 o 6 caracteres, consulta a tu profesor si tienes algún problema
+                </div> 
+                <button class="btn btn-primary" type="button" onclick="registrarAsistencia(document.getElementById('codigoAlumno').value)">Registrar</button>
+            </div>
+        </div>
+        <p class="footer-text">&copy; EduControl 2024 todos los derechos reservados</p>
+    </main>
+
+    <script>
+        function registrarAsistencia(idEstudiante) {
+            fetch('/registrar_asistencia', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id_estudiante: idEstudiante,
+                    estado: 'presente',
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.mensaje);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
